@@ -12,8 +12,8 @@ import java.io.IOException;
 public class MyHandlerExceptionResolver implements HandlerExceptionResolver {
     @Override
     public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) {
-
             log.info("IllegalArgumentException resolver to 400");
+
             try {
                 if (ex instanceof IllegalArgumentException) {
                     response.sendError(HttpServletResponse.SC_BAD_REQUEST, ex.getMessage());
