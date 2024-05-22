@@ -1,7 +1,7 @@
 package hello.exception.resolver;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import hello.exception.UserException;
+import hello.exception.exception.UserException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
@@ -37,7 +37,7 @@ public class UserHandlerExceptionResolver implements HandlerExceptionResolver {
                     return new ModelAndView();
                 } else {
                     //TEXT, HTML
-                    return new ModelAndView("error/500");
+                    return new ModelAndView("error/400");
                 }
             }
         } catch (IOException e) {
